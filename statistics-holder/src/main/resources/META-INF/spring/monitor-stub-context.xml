@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <description>Statistics Monitor Stub</description>
+
+    <bean id="queueStatisticsCollectorStub" class="ru.open.monitor.statistics.stub.QueueStatisticsCollectorStub" />
+    <bean id="queueStatisticsCleanerStub" class="ru.open.monitor.statistics.stub.QueueStatisticsCleanerStub" />
+    <bean id="eventBatchProcessedListenerStub" class="ru.open.monitor.statistics.stub.EventBatchProcessedListenerStub" />
+    <bean id="eventStatisticsCollectorStub" class="ru.open.monitor.statistics.stub.EventStatisticsCollectorStub" />
+    <bean id="eventStatisticsCleanerStub" class="ru.open.monitor.statistics.stub.EventStatisticsCleanerStub" />
+    <bean id="databaseStatisticsCollectorStub" class="ru.open.monitor.statistics.stub.DatabaseStatisticsCollectorStub" />
+    <bean id="databaseStatisticsCleanerStub" class="ru.open.monitor.statistics.stub.DatabaseStatisticsCleanerStub" />
+
+</beans>

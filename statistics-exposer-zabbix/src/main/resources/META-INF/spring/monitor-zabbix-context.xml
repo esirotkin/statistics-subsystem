@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <description>Statistics Zabbix Sender</description>
+
+    <context:annotation-config />
+    <context:component-scan base-package="ru.open.monitor.statistics.zabbix" />
+
+    <bean id="zabbixConfigurer" class="ru.open.monitor.statistics.zabbix.config.ZabbixConfigurerImpl">
+        <constructor-arg name="zabbixApiUrl" value="${statistics.monitor.zabbix.api.url:http://${statistics.monitor.zabbix.server.host}:${statistics.monitor.zabbix.api.port:#{T(ru.open.monitor.statistics.zabbix.config.ZabbixConfigurer).DEFAULT_API_PORT}}/zabbix/api_jsonrpc.php}" />
+        <property name="statisticsProvider" ref="statisticsHolder" />
+    </bean>
+
+    <bean id="zabbixSenderWrapper" class="ru.open.monitor.statistics.zabbix.ZabbixSenderWrapper" />
+
+    <bean id="zabbixAgentAddress" class="ru.open.monitor.statistics.zabbix.util.IPv4HostAddress">
+        <constructor-arg name="subnet" value="${statistics.monitor.zabbix.agent.subnet:10.0.0.0/8}" />
+    </bean>
+
+</beans>

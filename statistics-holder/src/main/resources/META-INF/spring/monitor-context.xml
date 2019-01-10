@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd">
+
+    <description>Statistics Monitor</description>
+
+    <bean id="queueStatisticsHolder" class="ru.open.monitor.statistics.queue.QueueStatisticsHolder" />
+    <bean id="statisticsHolder" class="ru.open.monitor.statistics.event.StatisticsHolder">
+        <constructor-arg name="queueStatisticsProvider" ref="queueStatisticsHolder" />
+        <constructor-arg name="queueStatisticsCleaner" ref="queueStatisticsHolder" />
+        <constructor-arg name="framedStatisticsSubscription" ref="framedEventStatisticsSubscription" />
+        <constructor-arg name="batchStatisticsSubscription" ref="eventBatchStatisticsSubscription" />
+        <constructor-arg name="queuePreProcessors" value="#{'${statistics.monitor.queuePreProcessors:}'.split(',')}" />
+        <constructor-arg name="timeFrameSeconds" value="#{T(java.lang.Double).valueOf('${statistics.monitor.timeFrame:15000}') / 1000.0}" />
+    </bean>
+    <bean id="databaseStatisticsHolder" class="ru.open.monitor.statistics.database.StatisticsHolder">
+        <constructor-arg name="timeFrameSeconds" value="#{T(java.lang.Double).valueOf('${statistics.monitor.timeFrame:15000}') / 1000.0}" />
+    </bean>
+    <bean id="framedEventStatisticsSubscription" class="ru.open.monitor.statistics.event.frame.FramedEventStatisticsSubscription" />
+    <bean id="eventBatchStatisticsSubscription" class="ru.open.monitor.statistics.event.frame.batch.EventBatchStatisticsSubscription" />
+
+    <task:scheduler id="statisticsScheduler" pool-size="1" />
+
+    <task:scheduled-tasks scheduler="statisticsScheduler">
+        <task:scheduled ref="statisticsHolder" method="timeFrame" fixed-rate="${statistics.monitor.timeFrame:15000}" />
+        <task:scheduled ref="databaseStatisticsHolder" method="timeFrame" fixed-rate="${statistics.monitor.timeFrame:15000}" />
+    </task:scheduled-tasks>
+
+</beans>

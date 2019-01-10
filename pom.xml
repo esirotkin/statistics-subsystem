@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>ru.open.commons.statistics</groupId>
+    <artifactId>statistics-subsystem</artifactId>
+    <version>1.4.0-SNAPSHOT</version>
+    <name>Statistics Monitoring Subsystem</name>
+    <description>Java App Statistics Collector and Monitoring Subsystem</description>
+    <packaging>pom</packaging>
+
+    <scm>
+        <connection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</connection>
+        <tag>HEAD</tag>
+    </scm>
+
+    <properties>
+        <targetJdk>1.8</targetJdk>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.javadoc.skip>true</maven.javadoc.skip>
+        <!-- Spring & Aspect J -->
+        <spring.version>4.3.7.RELEASE</spring.version>
+        <aspectj.version>1.8.9</aspectj.version>
+        <!-- Zabbix -->
+        <zabbix.api.version>0.0.3</zabbix.api.version>
+        <zabbix.sender.version>0.0.5</zabbix.sender.version>
+        <!-- Logginig -->
+        <slf4j-api.version>1.7.25</slf4j-api.version>
+        <logback.version>1.2.3</logback.version>
+        <!-- Testing -->
+        <junit.version>4.12</junit.version>
+        <mockito.version>1.10.19</mockito.version>
+    </properties>
+
+    <modules>
+        <module>statistics-holder</module>
+        <module>statistics-collector-aop</module>
+        <module>statistics-collector-jdbc</module>
+        <module>statistics-exposer-jmx</module>
+        <module>statistics-exposer-zabbix</module>
+        <module>statistics-exposer-log</module>
+    </modules>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>${basedir}/src/main/resources</directory>
+                <excludes>
+                    <exclude>**/*.properties</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <configuration>
+                        <source>${targetJdk}</source>
+                        <target>${targetJdk}</target>
+                        <encoding>${project.build.sourceEncoding}</encoding>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <configuration>
+                        <excludes>
+                            <exclude>logback.xml</exclude>
+                        </excludes>
+                    </configuration>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+
+    <dependencyManagement>
+        <dependencies>
+            <!-- ========================================================== -->
+            <!-- Spring Framework                                           -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-core</artifactId>
+                <version>${spring.version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>commons-logging</groupId>
+                        <artifactId>commons-logging</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-context</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.springframework</groupId>
+                <artifactId>spring-aop</artifactId>
+                <version>${spring.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Aspect J                                                   -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjrt</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjtools</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.aspectj</groupId>
+                <artifactId>aspectjweaver</artifactId>
+                <version>${aspectj.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Zabbix                                                     -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>io.github.hengyunabc</groupId>
+                <artifactId>zabbix-api</artifactId>
+                <version>${zabbix.api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>io.github.hengyunabc</groupId>
+                <artifactId>zabbix-sender</artifactId>
+                <version>${zabbix.sender.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Logging                                                    -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>org.slf4j</groupId>
+                <artifactId>slf4j-api</artifactId>
+                <version>${slf4j-api.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-core</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>ch.qos.logback</groupId>
+                <artifactId>logback-classic</artifactId>
+                <version>${logback.version}</version>
+            </dependency>
+            <!-- ========================================================== -->
+            <!-- Test Dependencies                                          -->
+            <!-- ========================================================== -->
+            <dependency>
+                <groupId>junit</groupId>
+                <artifactId>junit</artifactId>
+                <version>${junit.version}</version>
+                <scope>test</scope>
+            </dependency>
+            <dependency>
+                <groupId>org.mockito</groupId>
+                <artifactId>mockito-core</artifactId>
+                <version>${mockito.version}</version>
+                <scope>test</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>

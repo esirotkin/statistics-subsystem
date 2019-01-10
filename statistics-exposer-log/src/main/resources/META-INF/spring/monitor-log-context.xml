@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+                           http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task.xsd
+                           http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <description>Statistics Logger</description>
+
+    <context:component-scan base-package="ru.open.monitor.statistics.log" />
+
+    <task:scheduler id="statisticsLoggerScheduler" pool-size="1" />
+
+    <task:scheduled-tasks scheduler="statisticsLoggerScheduler">
+        <task:scheduled ref="fullStatisticsLogger" method="logStatistics" fixed-rate="${statistics.monitor.log.rate:30000}" />
+    </task:scheduled-tasks>
+
+</beans>
