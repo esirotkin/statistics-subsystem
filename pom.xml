@@ -20,17 +20,17 @@
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <maven.javadoc.skip>true</maven.javadoc.skip>
         <!-- Spring & Aspect J -->
-        <spring.version>4.3.7.RELEASE</spring.version>
-        <aspectj.version>1.8.9</aspectj.version>
+        <spring.version>[3.0.0.RELEASE,)</spring.version>
+        <aspectj.version>[1.5.0,)</aspectj.version>
         <!-- Zabbix -->
         <zabbix.api.version>0.0.3</zabbix.api.version>
         <zabbix.sender.version>0.0.5</zabbix.sender.version>
         <!-- Logginig -->
-        <slf4j-api.version>1.7.25</slf4j-api.version>
-        <logback.version>1.2.3</logback.version>
+        <slf4j-api.version>[1.6.0,)</slf4j-api.version>
+        <logback.version>[1.0.0,)</logback.version>
         <!-- Testing -->
-        <junit.version>4.12</junit.version>
-        <mockito.version>1.10.19</mockito.version>
+        <junit.version>[4.0,)</junit.version>
+        <mockito.version>[1.10.0,)</mockito.version>
     </properties>
 
     <modules>
