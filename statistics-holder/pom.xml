@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>ru.open.commons.statistics</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-subsystem</artifactId>
         <version>1.4.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>

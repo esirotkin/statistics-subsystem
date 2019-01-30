@@ -9,7 +9,7 @@
         <version>9</version>
     </parent>
 
-    <groupId>ru.open.commons.statistics</groupId>
+    <groupId>io.github.esirotkin</groupId>
     <artifactId>statistics-subsystem</artifactId>
     <version>1.4.1-SNAPSHOT</version>
     <name>Statistics Monitoring Subsystem</name>
@@ -194,7 +194,7 @@
             <!-- Zabbix                                                     -->
             <!-- ========================================================== -->
             <dependency>
-                <groupId>io.github.hengyunabc</groupId>
+                <groupId>io.github.esirotkin</groupId>
                 <artifactId>zabbix-api</artifactId>
                 <version>${zabbix.api.version}</version>
             </dependency>

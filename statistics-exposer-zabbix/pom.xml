@@ -4,7 +4,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <parent>
-        <groupId>ru.open.commons.statistics</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-subsystem</artifactId>
         <version>1.4.1-SNAPSHOT</version>
         <relativePath>../pom.xml</relativePath>
@@ -15,7 +15,7 @@
 
     <dependencies>
         <dependency>
-            <groupId>ru.open.commons.statistics</groupId>
+            <groupId>io.github.esirotkin</groupId>
             <artifactId>statistics-holder</artifactId>
             <version>${project.version}</version>
         </dependency>
@@ -30,7 +30,7 @@
         <!-- Zabbix                                                     -->
         <!-- ========================================================== -->
         <dependency>
-            <groupId>io.github.hengyunabc</groupId>
+            <groupId>io.github.esirotkin</groupId>
             <artifactId>zabbix-api</artifactId>
         </dependency>
         <dependency>
