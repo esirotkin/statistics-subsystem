@@ -113,13 +113,13 @@
 
 ### <a name="StatisticsCollectorAOPDescription" /> Statistics Collector AOP
 
-Модуль [Statistics Collector AOP](#StatisticsCollectorAOPDescription) предназначен для сбора статистики средствами [Spring AOP](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/aop.html).
+Модуль [Statistics Collector AOP](#StatisticsCollectorAOPDescription) предназначен для сбора статистики средствами [Spring AOP](http://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop).
 
 Использование подхода [AOP](http://ru.wikipedia.org/wiki/%D0%90%D1%81%D0%BF%D0%B5%D0%BA%D1%82%D0%BD%D0%BE-%D0%BE%D1%80%D0%B8%D0%B5%D0%BD%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%BD%D0%BE%D0%B5_%D0%BF%D1%80%D0%BE%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D0%B5) оправдано тогда, когда сложно внедрить в ваше приложение дополнительные [Proxy](http://ru.wikipedia.org/wiki/Proxy_%28%D1%88%D0%B0%D0%B1%D0%BB%D0%BE%D0%BD_%D0%BF%D1%80%D0%BE%D0%B5%D0%BA%D1%82%D0%B8%D1%80%D0%BE%D0%B2%D0%B0%D0%BD%D0%B8%D1%8F%29)-объекты для организации сбора статистики.
 
 #### <a name="StatisticsCollectorAOPConnection" /> Подключение к приложению
 
-Для подключения данного сборщика статистики к вашему приложению необходимо в зависимости проекта добавить зависимость от данного модуля и подгрузить Spring-контекст, в котором вы должны будете определить [конфигурацию AOP](http://docs.spring.io/spring-framework/docs/current/spring-framework-reference/html/aop.html#aop-schema) аналогично примеру, приведённому ниже.
+Для подключения данного сборщика статистики к вашему приложению необходимо в зависимости проекта добавить зависимость от данного модуля и подгрузить Spring-контекст, в котором вы должны будете определить [конфигурацию AOP](http://docs.spring.io/spring/docs/current/spring-framework-reference/core.html#aop-schema) аналогично примеру, приведённому ниже.
 
 ```xml
     <dependency>
