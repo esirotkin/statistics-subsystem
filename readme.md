@@ -449,7 +449,7 @@
     <bean id="onDemandZabbixSender" class="ru.open.monitor.statistics.zabbix.OnDemandZabbixSender" />
 ```
 
-И, заинжектив его в своё приложение, отправлять в Zabbix *неопределённые* данные, реализующие интерфейс [ExternalItem](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/ext/ExternalItem.java).
+И, заинжектив его в своё приложение, отправлять в Zabbix *неопределённые* данные, реализующие интерфейс [ExternalItem](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/item/ExternalItem.java).
 
 ```java
     @Autowired
