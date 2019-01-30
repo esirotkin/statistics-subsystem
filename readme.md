@@ -368,10 +368,6 @@
 
 [ZabbixSender](http://github.com/hengyunabc/zabbix-sender) отправляет на сервер Zabbix сообщения в [JSON](http://ru.wikipedia.org/wiki/JSON)-формате, где ключ `key` -- это соответствующий атрибут, а `value` -- его значение.
 
-Здесь следует отметить, что последние версии Zabbix *не* требуют наличия метки времени `clock` в отправляемых сообщениях.
-В исходном варианте библиотеки [Java Zabbix Sender](http://github.com/hengyunabc/zabbix-sender) данная метка времени жёстко "зашита" в код Java-реализации `ZabbixSender`'а.
-Исправленный для совместимости с новыми версиями Zabbix код [форкнутого с GitHub проекта](http://github.com/hengyunabc/zabbix-sender) можно найти в нашем [GitLab](http://gitlab.open-broker.ru/sirotkin/zabbix-sender)'е.
-
 ##### ProcessedEvents
 
 Статистика об обработанных сообщениях каждого типа отправляются в Zabbix в виде пары `key`/`value`:
