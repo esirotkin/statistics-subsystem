@@ -1,4 +1,4 @@
-Данная подсистема предназначена для мониторинга количества обработанных и опубликованных событий приложением, к которому данная подсистема мониторинга (сбора статистики) подключен.
+Данная подсистема предназначена для мониторинга количества обработанных и опубликованных событий приложением, к которому данная подсистема мониторинга (сбора статистики) подключена.
 
 ### <a name="MonitoringDescription" /> Описание подсистемы мониторинга
 
@@ -36,8 +36,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-holder</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
@@ -122,8 +123,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-collector-aop</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
@@ -168,8 +170,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-collector-jdbc</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
@@ -254,8 +257,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-jmx</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
@@ -301,8 +305,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-zabbix</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
@@ -472,8 +477,9 @@
 
 ```xml
     <dependency>
-        <groupId>ru.open.monitor</groupId>
+        <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-log</artifactId>
+        <version>1.0.0</version>
     </dependency>
 ```
 
