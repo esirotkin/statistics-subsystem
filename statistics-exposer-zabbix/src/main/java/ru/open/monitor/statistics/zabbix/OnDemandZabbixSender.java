@@ -59,7 +59,7 @@ public class OnDemandZabbixSender {
                                 LOG.trace("Sending {} ...", zabbixData);
                                 zabbixSender.sendToZabbix(zabbixData);
                             } catch (Throwable t) {
-                                LOG.error("Failed to send data to Zabbix!", t);
+                                LOG.warn("Failed to send data to Zabbix!", t);
                             }
                         }
                     }
