@@ -28,7 +28,7 @@
 
 Данный модуль аггрегирует как *полную* статистику (от момента последнего обнуления статистики), так и статистику за промежуток времени *тайм-фрейм*, определяемый свойством `statistics.monitor.timeFrame`.
 
-*Полная* статистика может быть получена потребителем статистики в любой момент времени, в отличии от статистики за *тайм-фрейм*, которая предоставляется потребителю статистики, реализующему интерфейс [FramedEventStatisticsConsumer](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) строго на границе окончания временного промежутка, определённого свойством `statistics.monitor.timeFrame`.
+*Полная* статистика может быть получена потребителем статистики в любой момент времени, в отличии от статистики за *тайм-фрейм*, которая предоставляется потребителю статистики, реализующему интерфейс [FramedEventStatisticsConsumer](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) строго на границе окончания временного промежутка, определённого свойством `statistics.monitor.timeFrame`.
 
 #### <a name="StatisticsHolderConnection" /> Подключение к приложению
 
@@ -56,27 +56,27 @@
 
 Для взаимодействия с агрегатором статистики предоставляются 9 интерфейсов:
 
-* [StatisticsCollector](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCollector.java) -- для сбора статистики об обработанных и опубликованных событиях;
-* [StatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java) -- для получения *полной* статистики об обработанных и опубликованных событиях;
-* [FramedEventStatisticsSubscription](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsSubscription.java) -- для подписки на получение статистики за временной промежуток *тайм-фрейм*;
-* [FramedEventStatisticsConsumer](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) -- должен быть реализован потребителем статистики за временной промежуток *тайм-фрейм*;
-* [FramedEventStatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsProvider.java) -- интерфейс, наследуемый от [StatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java), предоставляемый потребителю статистики за временной промежуток *тайм-фрейм* для получения этой самой статистики;
-* [QueueStatisticsCollector](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCollector.java) -- для сбора статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
-* [QueueStatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsProvider.java) -- для получения статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
-* [QueueStatisticsCleaner](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCleaner.java) -- для очистки статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
-* [StatisticsCleaner](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCleaner.java) -- для очистки всей собранной статистики.
+* [StatisticsCollector](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCollector.java) -- для сбора статистики об обработанных и опубликованных событиях;
+* [StatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java) -- для получения *полной* статистики об обработанных и опубликованных событиях;
+* [FramedEventStatisticsSubscription](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsSubscription.java) -- для подписки на получение статистики за временной промежуток *тайм-фрейм*;
+* [FramedEventStatisticsConsumer](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) -- должен быть реализован потребителем статистики за временной промежуток *тайм-фрейм*;
+* [FramedEventStatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsProvider.java) -- интерфейс, наследуемый от [StatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java), предоставляемый потребителю статистики за временной промежуток *тайм-фрейм* для получения этой самой статистики;
+* [QueueStatisticsCollector](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCollector.java) -- для сбора статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
+* [QueueStatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsProvider.java) -- для получения статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
+* [QueueStatisticsCleaner](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCleaner.java) -- для очистки статистики работы очереди обработки событий вашего приложения/сервиса (при наличии таковой);
+* [StatisticsCleaner](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCleaner.java) -- для очистки всей собранной статистики.
 
-С интерфейсом [StatisticsCollector](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCollector.java) взаимодействуют сборщики статистики, такие как [Statistics Collector AOP](#StatisticsCollectorAOPDescription).
+С интерфейсом [StatisticsCollector](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCollector.java) взаимодействуют сборщики статистики, такие как [Statistics Collector AOP](#StatisticsCollectorAOPDescription).
 
-С интерфейсом [StatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java) взаимодействуют экспортёры статистики, такие как [Statistics Exposer JMX](#StatisticsExposerJMXDescription) и [Statistics Exposer Log](#StatisticsExposerLogDescription).
+С интерфейсом [StatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsProvider.java) взаимодействуют экспортёры статистики, такие как [Statistics Exposer JMX](#StatisticsExposerJMXDescription) и [Statistics Exposer Log](#StatisticsExposerLogDescription).
 
-С интерфейсами [FramedEventStatisticsSubscription](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsSubscription.java), [FramedEventStatisticsConsumer](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) и [FramedEventStatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsProvider.java) так же взаимодействуют экспортёры статистики, такие как [Statistics Exposer Zabbix](#StatisticsExposerZabbixDescription) и [Statistics Exposer Log](#StatisticsExposerLogDescription).
+С интерфейсами [FramedEventStatisticsSubscription](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsSubscription.java), [FramedEventStatisticsConsumer](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsConsumer.java) и [FramedEventStatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/frame/FramedEventStatisticsProvider.java) так же взаимодействуют экспортёры статистики, такие как [Statistics Exposer Zabbix](#StatisticsExposerZabbixDescription) и [Statistics Exposer Log](#StatisticsExposerLogDescription).
 
 С этими интерфейсами вам взаимодействовать внутри вашего приложения в явном виде вряд ли придётся.
 
 ##### Сбор статистики о работе очереди обработки событий
 
-Для сбора статистики о работе очереди обработки событий необходимо в класс, реализующий очередь обработки событий, заинжектить бин, реализующий интерфейс [QueueStatisticsCollector](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCollector.java).
+Для сбора статистики о работе очереди обработки событий необходимо в класс, реализующий очередь обработки событий, заинжектить бин, реализующий интерфейс [QueueStatisticsCollector](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/queue/QueueStatisticsCollector.java).
 
 ```java
     @Autowired
@@ -89,19 +89,19 @@
 
 Для мониторинга статистики взаимодействия с БД предназначен отдельный `StatisticsHolder`, кототрый предоставляет 6 интерфейсов, аналогичных вышеописанным интерфейсам:
 
-* [StatisticsCollector](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsCollector.java) -- для сбора статистики о выполненных запросах и обработанных записях (в каждом из `ResultSet`ов);
-* [StatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsProvider.java) -- для получения *полной* статистики о выполненных запросах и обработанных записях;
-* [FramedDbStatisticsSubscription](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsSubscription.java) -- для подписки на получение статистики за временной промежуток *тайм-фрейм*;
-* [FramedDbStatisticsConsumer](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsConsumer.java) -- должен быть реализован потребителем статистики за временной промежуток *тайм-фрейм*;
-* [FramedDbStatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsProvider.java) -- интерфейс, наследуемый от [StatisticsProvider](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsProvider.java), предоставляемый потребителю статистики за временной промежуток *тайм-фрейм* для получения этой самой статистики;
-* [StatisticsCleaner](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsCleaner.java) -- для очистки всей собранной статистики.
+* [StatisticsCollector](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsCollector.java) -- для сбора статистики о выполненных запросах и обработанных записях (в каждом из `ResultSet`ов);
+* [StatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsProvider.java) -- для получения *полной* статистики о выполненных запросах и обработанных записях;
+* [FramedDbStatisticsSubscription](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsSubscription.java) -- для подписки на получение статистики за временной промежуток *тайм-фрейм*;
+* [FramedDbStatisticsConsumer](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsConsumer.java) -- должен быть реализован потребителем статистики за временной промежуток *тайм-фрейм*;
+* [FramedDbStatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/frame/FramedDbStatisticsProvider.java) -- интерфейс, наследуемый от [StatisticsProvider](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsProvider.java), предоставляемый потребителю статистики за временной промежуток *тайм-фрейм* для получения этой самой статистики;
+* [StatisticsCleaner](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/database/StatisticsCleaner.java) -- для очистки всей собранной статистики.
 
 Как и в случае с интерфейсами, ответственными за сбор и получение статистики об обработке и публикации событий (`Event`), взаимодействовать напрямую с данными интерфейсами нет необходимости.
 Для сбора статистики об исполнении запросов БД и обработке полученных в результате исполнения запроса результатов предназначен модуль [Statistics Collector JDBC](#StatisticsCollectorJDBCDescription), а публикацией собранной статистики в Zabbix занимается общий модуль [Statistics Exposer Zabbix](#StatisticsExposerZabbixDescription).
 
 ##### Обнуление статистики
 
-Для обнуления собранной за определённый период статистики (например, за сутки; или по факту получения события `CleanEvent`) следует воспользоваться интерфейсом [StatisticsCleaner](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCleaner.java), предваритеьлно заинжектив соответствующий бин в своё приложение/сервис.
+Для обнуления собранной за определённый период статистики (например, за сутки; или по факту получения события `CleanEvent`) следует воспользоваться интерфейсом [StatisticsCleaner](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-holder/src/main/java/ru/open/monitor/statistics/event/StatisticsCleaner.java), предваритеьлно заинжектив соответствующий бин в своё приложение/сервис.
 
 ```java
     @Autowired
@@ -190,7 +190,7 @@
 </beans>
 ```
 
-А в приложении необходимо каждый JDBC `Connection` обернуть в [ConnectionWrapper](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-collector-jdbc/src/main/java/ru/open/monitor/statistics/jdbc/ConnectionWrapper.java) (как показано ниже).
+А в приложении необходимо каждый JDBC `Connection` обернуть в [ConnectionWrapper](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-collector-jdbc/src/main/java/ru/open/monitor/statistics/jdbc/ConnectionWrapper.java) (как показано ниже).
 
 ```java
     @Autowired
@@ -351,7 +351,7 @@
 
 #### Автоматическое конфигурирование Zabbix для отправки статистики на сервер
 
-При включенном свойстве `statistics.monitor.zabbix.enable` в `true` [ZabbixConfigurer](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/ZabbixConfigurerImpl.java) перед отправкой статистики в Zabbix средствами `ZabbixSender` производит конфигурирование сервера Zabbix для приёма отправляемой вашим приложением статистики.
+При включенном свойстве `statistics.monitor.zabbix.enable` в `true` [ZabbixConfigurer](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/ZabbixConfigurerImpl.java) перед отправкой статистики в Zabbix средствами `ZabbixSender` производит конфигурирование сервера Zabbix для приёма отправляемой вашим приложением статистики.
 
 Конфигурирование состоит из следующих этапов:
 
@@ -453,7 +453,7 @@
     <bean id="onDemandZabbixSender" class="ru.open.monitor.statistics.zabbix.OnDemandZabbixSender" />
 ```
 
-И, заинжектив его в своё приложение, отправлять в Zabbix *неопределённые* данные, реализующие интерфейс [ExternalItem](http://stash.open-broker.ru/projects/MON/repos/statistics-monitor/browse/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/ext/ExternalItem.java).
+И, заинжектив его в своё приложение, отправлять в Zabbix *неопределённые* данные, реализующие интерфейс [ExternalItem](https://github.com/esirotkin/statistics-subsystem/blob/master/statistics-exposer-zabbix/src/main/java/ru/open/monitor/statistics/zabbix/config/ext/ExternalItem.java).
 
 ```java
     @Autowired
