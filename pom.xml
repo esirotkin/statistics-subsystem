@@ -11,13 +11,15 @@
 
     <groupId>io.github.esirotkin</groupId>
     <artifactId>statistics-subsystem</artifactId>
-    <version>1.0.0</version>
+    <version>1.0.1-SNAPSHOT</version>
     <name>Statistics Subsystem</name>
     <description>Subsystem for monitoring and collecting statistics of event-driven Java applications</description>
     <packaging>pom</packaging>
 
     <scm>
         <connection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</connection>
+        <url>https://github.com/esirotkin/statistics-subsystem</url>
+        <developerConnection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
@@ -155,6 +157,17 @@
                         <excludes>
                             <exclude>logback.xml</exclude>
                         </excludes>
+                    </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-release-plugin</artifactId>
+                    <configuration>
+                        <tagNameFormat>@{project.version}</tagNameFormat>
+                        <autoVersionSubmodules>true</autoVersionSubmodules>
+                        <useReleaseProfile>false</useReleaseProfile>
+                        <releaseProfiles>ossrh</releaseProfiles>
+                        <goals>deploy</goals>
                     </configuration>
                 </plugin>
             </plugins>
