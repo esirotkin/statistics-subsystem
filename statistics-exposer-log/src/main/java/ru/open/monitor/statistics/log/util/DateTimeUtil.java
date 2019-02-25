@@ -122,7 +122,7 @@ public class DateTimeUtil {
     }
 
     /**
-     * Compares the time values represented by two array objects.<br/>
+     * Compares the time values represented by two array objects.<br>
      * Each object must be an array of integers with the hour, minute and second as its first, second and third values.
      *
      * @param originalTime the original time value.
@@ -171,7 +171,7 @@ public class DateTimeUtil {
     }
 
     /**
-     * Compares the date values represented by two {@link Date} objects.<br/>
+     * Compares the date values represented by two {@link Date} objects.<br>
      *
      * @param originalDate the original date value.
      * @param dateToCompare the date to be compared.
