@@ -24,7 +24,7 @@
             </applications>
             <items>
                 <item>
-                    <name>cl Loaded Class Count</name>
+                    <name>Loaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -67,7 +67,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>cl Total Loaded Class Count</name>
+                    <name>Total Loaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -110,7 +110,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>cl Unloaded Class Count</name>
+                    <name>Unloaded Class Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -153,7 +153,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>comp Name of the current JIT compiler</name>
+                    <name>Name of the current JIT compiler</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -196,7 +196,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>comp Accumulated time spent in compilation</name>
+                    <name>Accumulated time spent in compilation</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -239,179 +239,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>gc G1 Old collection count</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Old Generation&quot;,CollectionCount]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>2</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>gc G1 Old collection time</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Old Generation&quot;,CollectionTime]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>ms</units>
-                    <delta>2</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>gc G1 Young collection count</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,CollectionCount]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units/>
-                    <delta>2</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>gc G1 Young collection time</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,CollectionTime]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>ms</units>
-                    <delta>2</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mem Heap Memory committed</name>
+                    <name>Heap Memory committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -454,7 +282,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Heap Memory max</name>
+                    <name>Heap Memory max</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -497,7 +325,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Heap Memory used</name>
+                    <name>Heap Memory used</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -540,7 +368,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory committed</name>
+                    <name>Non-Heap Memory committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -583,7 +411,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory max</name>
+                    <name>Non-Heap Memory max</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -626,7 +454,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Non-Heap Memory used</name>
+                    <name>Non-Heap Memory used</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -669,7 +497,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mem Object Pending Finalization Count</name>
+                    <name>Object Pending Finalization Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -712,7 +540,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mp Code Cache committed</name>
+                    <name>Code Cache committed</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -755,7 +583,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mp Code Cache max</name>
+                    <name>Code Cache max</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -798,270 +626,12 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>mp Code Cache used</name>
+                    <name>Code Cache used</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
                     <snmp_oid/>
                     <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.used]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Eden Space committed</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Eden Space&quot;,Usage.committed]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Eden Space used</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Eden Space&quot;,Usage.used]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Old Gen committed</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Old Gen&quot;,Usage.committed]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Old Gen used</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Old Gen&quot;,Usage.used]</key>
-                    <delay>20</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Survivor Space committed</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Survivor Space&quot;,Usage.committed]</key>
-                    <delay>60</delay>
-                    <history>7</history>
-                    <trends>365</trends>
-                    <status>0</status>
-                    <value_type>3</value_type>
-                    <allowed_hosts/>
-                    <units>B</units>
-                    <delta>0</delta>
-                    <snmpv3_contextname/>
-                    <snmpv3_securityname/>
-                    <snmpv3_securitylevel>0</snmpv3_securitylevel>
-                    <snmpv3_authprotocol>0</snmpv3_authprotocol>
-                    <snmpv3_authpassphrase/>
-                    <snmpv3_privprotocol>0</snmpv3_privprotocol>
-                    <snmpv3_privpassphrase/>
-                    <formula>1</formula>
-                    <delay_flex/>
-                    <params/>
-                    <ipmi_sensor/>
-                    <data_type>0</data_type>
-                    <authtype>0</authtype>
-                    <username/>
-                    <password/>
-                    <publickey/>
-                    <privatekey/>
-                    <port/>
-                    <description/>
-                    <inventory_link>0</inventory_link>
-                    <applications>
-                        <application>
-                            <name>JVM</name>
-                        </application>
-                    </applications>
-                    <valuemap/>
-                    <logtimefmt/>
-                </item>
-                <item>
-                    <name>mp G1 Survivor Space used</name>
-                    <type>16</type>
-                    <snmp_community/>
-                    <multiplier>0</multiplier>
-                    <snmp_oid/>
-                    <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Survivor Space&quot;,Usage.used]</key>
                     <delay>20</delay>
                     <history>7</history>
                     <trends>365</trends>
@@ -1142,7 +712,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>os Open File Descriptor Count</name>
+                    <name>Open File Descriptor Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1185,7 +755,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>os Process CPU Load</name>
+                    <name>Process CPU Load</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -1228,7 +798,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>jvm Uptime</name>
+                    <name>JVM Uptime</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>1</multiplier>
@@ -1271,7 +841,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>jvm Name</name>
+                    <name>JVM Name</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1314,7 +884,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>jvm Version</name>
+                    <name>JVM Version</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1357,7 +927,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>th Daemon Thread Count</name>
+                    <name>Daemon Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1400,7 +970,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>th Peak Thread Count</name>
+                    <name>Peak Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1443,7 +1013,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>th Thread Count</name>
+                    <name>Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1486,7 +1056,7 @@
                     <logtimefmt/>
                 </item>
                 <item>
-                    <name>th Total Started Thread Count</name>
+                    <name>Total Started Thread Count</name>
                     <type>16</type>
                     <snmp_community/>
                     <multiplier>0</multiplier>
@@ -1576,7 +1146,7 @@
                             <dynamic>0</dynamic>
                             <sort_triggers>0</sort_triggers>
                             <resource>
-                                <name>JVM Garbage Collector (20s intervals)</name>
+                                <name>JVM Memory Pool Code Cache</name>
                                 <host>Template JVM Generic</host>
                             </resource>
                             <max_columns>3</max_columns>
@@ -1909,62 +1479,6 @@
             </graph_items>
         </graph>
         <graph>
-            <name>JVM Garbage Collector (20s intervals)</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>1</drawtype>
-                    <color>FFCCCC</color>
-                    <yaxisside>1</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,CollectionCount]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>990000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Old Generation&quot;,CollectionTime]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>2</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>009900</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=GarbageCollector,name=G1 Young Generation&quot;,CollectionTime]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
             <name>JVM Memory Overview</name>
             <width>900</width>
             <height>200</height>
@@ -2060,138 +1574,6 @@
                     <item>
                         <host>Template JVM Generic</host>
                         <key>jmx[&quot;java.lang:type=MemoryPool,name=Code Cache&quot;,Usage.max]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>JVM Memory Pool G1 Eden Space</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00CC00</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Eden Space&quot;,Usage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>CC0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Eden Space&quot;,Usage.used]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>JVM Memory Pool G1 Old Gen</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00CC00</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Old Gen&quot;,Usage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>CC0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Old Gen&quot;,Usage.used]</key>
-                    </item>
-                </graph_item>
-            </graph_items>
-        </graph>
-        <graph>
-            <name>JVM Memory Pool G1 Survivor Space</name>
-            <width>900</width>
-            <height>200</height>
-            <yaxismin>0.0000</yaxismin>
-            <yaxismax>100.0000</yaxismax>
-            <show_work_period>1</show_work_period>
-            <show_triggers>1</show_triggers>
-            <type>0</type>
-            <show_legend>1</show_legend>
-            <show_3d>0</show_3d>
-            <percent_left>0.0000</percent_left>
-            <percent_right>0.0000</percent_right>
-            <ymin_type_1>1</ymin_type_1>
-            <ymax_type_1>0</ymax_type_1>
-            <ymin_item_1>0</ymin_item_1>
-            <ymax_item_1>0</ymax_item_1>
-            <graph_items>
-                <graph_item>
-                    <sortorder>0</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>00CC00</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Survivor Space&quot;,Usage.committed]</key>
-                    </item>
-                </graph_item>
-                <graph_item>
-                    <sortorder>1</sortorder>
-                    <drawtype>0</drawtype>
-                    <color>CC0000</color>
-                    <yaxisside>0</yaxisside>
-                    <calc_fnc>2</calc_fnc>
-                    <type>0</type>
-                    <item>
-                        <host>Template JVM Generic</host>
-                        <key>jmx[&quot;java.lang:type=MemoryPool,name=G1 Survivor Space&quot;,Usage.used]</key>
                     </item>
                 </graph_item>
             </graph_items>
