@@ -19,7 +19,6 @@
     <scm>
         <connection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</connection>
         <url>https://github.com/esirotkin/statistics-subsystem</url>
-        <developerConnection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</developerConnection>
         <tag>HEAD</tag>
     </scm>
 
