@@ -250,7 +250,7 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     @Value("${statistics.monitor.zabbix.numberOfConfigurationAttempts:5}")
     private int numberOfConfigurationAttempts;
 
-    @Value("${statistics.monitor.zabbix.configureJvmMonitor:true}")
+    @Value("${statistics.monitor.zabbix.configureJvmMonitor:false}")
     private boolean configureJvmMonitor;
 
     private ZabbixVersion zabbixVersion;
