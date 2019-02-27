@@ -572,7 +572,7 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String prepareApplicationAwareName(final String name) {
-        return zabbixAgentApplication + "::" + name;
+        return zabbixAgentApplication + ": " + name;
     }
 
     @Override
