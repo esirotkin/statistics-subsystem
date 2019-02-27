@@ -217,6 +217,9 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     @Value("${statistics.monitor.zabbix.host.group}")
     private String zabbixHostGroup;
 
+    @Value("${statistics.monitor.zabbix.simpleNames:true}")
+    private boolean zabbixSimpleNames;
+
     @Value("${statistics.monitor.zabbix.applyTemplates:false}")
     private boolean applyZabbixTemplates;
     @Value("#{'${statistics.monitor.zabbix.templates:}'.split(',')}")
@@ -436,7 +439,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getProcessedEventName(final ProcessedEvent.Key key, final ItemKind itemKind) {
-        return "Processed." + getSimpleClassName(key.getHandlerClass()) + "." + getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        if (zabbixSimpleNames) {
+            return getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        } else {
+            return "Processed." + getSimpleClassName(key.getHandlerClass()) + "." + getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        }
     }
 
     private String getProcessedEventDescription(final ProcessedEvent.Key key, final ItemKind itemKind) {
@@ -473,7 +480,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getPublishedEventName(final PublishedEvent.Key key, final ItemKind itemKind) {
-        return "Published." + getSimpleClassName(key.getPublisherClass()) + "." + getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        if (zabbixSimpleNames) {
+            return getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        } else {
+            return "Published." + getSimpleClassName(key.getPublisherClass()) + "." + getSimpleClassName(key.getEventClass()) + "." + itemKind.getItemName();
+        }
     }
 
     private String getPublishedEventDescription(final PublishedEvent.Key key, final ItemKind itemKind) {
@@ -489,7 +500,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getQueueStatisticsName(final QueueStatisticsKey key) {
-        return key.getServiceName() + "." + key.getItemName() + "." + key.getItemKind().getItemName();
+        if (zabbixSimpleNames) {
+            return key.getItemName() + "." + key.getItemKind().getItemName();
+        } else {
+            return key.getServiceName() + "." + key.getItemName() + "." + key.getItemKind().getItemName();
+        }
     }
 
     private String getQueueStatisticsDescription(final QueueStatisticsKey key) {
@@ -505,7 +520,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getExecutedStatementName(final ExecutedStatement.Key key, final ItemKind itemKind) {
-        return APP_EXECUTED_STATEMENTS + "." + key.getStatement().toUpperCase() + "." + itemKind.getItemName();
+        if (zabbixSimpleNames) {
+            return key.getStatement().toUpperCase() + "." + itemKind.getItemName();
+        } else {
+            return APP_EXECUTED_STATEMENTS + "." + key.getStatement().toUpperCase() + "." + itemKind.getItemName();
+        }
     }
 
     private String getExecutedStatementDescription(final ExecutedStatement.Key key, final ItemKind itemKind) {
@@ -529,7 +548,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getProcessedResultName(final ProcessedResult.Key key, final ItemKind itemKind) {
-        return APP_PROCESSED_RESULTS + "." + key.getStatement().toUpperCase() + "." + key.getResultSet().toUpperCase() + "." + itemKind.getItemName();
+        if (zabbixSimpleNames) {
+            return key.getStatement().toUpperCase() + "." + key.getResultSet().toUpperCase() + "." + itemKind.getItemName();
+        } else {
+            return APP_PROCESSED_RESULTS + "." + key.getStatement().toUpperCase() + "." + key.getResultSet().toUpperCase() + "." + itemKind.getItemName();
+        }
     }
 
     private String getProcessedResultDescription(final ProcessedResult.Key key, final ItemKind itemKind) {

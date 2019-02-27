@@ -326,6 +326,7 @@
 * `statistics.monitor.zabbix.proxy.list` -- список хостов (и портов) [Zabbix Proxy](http://www.zabbix.com/documentation/3.0/ru/manual/concepts/proxy) в нотации IPv4, перечисляемых через запятую (параметр *необязательный*: в случае отсутствия будет использовано значение `statistics.monitor.zabbix.server.host`:`statistics.monitor.zabbix.sender.port`);
 * `statistics.monitor.zabbix.onDemandSendRhythm` -- ритм (периодичность) отправки значений *по требованию* в Zabbix (параметр *необязательный*: значение по умолчанию = 500 мс);
 * `statistics.monitor.zabbix.host.group` -- имя группы хостов (host group), к которой принадлежит данный сервер (на котором запущено данное приложение);
+* `statistics.monitor.zabbix.simpleNames` -- использовать простые имена для элементов данных (item) в Zabbix (параметр *необязательный*: значение по умолчанию = `true`);
 * `statistics.monitor.zabbix.applyTemplates` -- применять ли перечисленные в параметре `statistics.monitor.zabbix.templates` шаблоны к данному хосту (параметр *необязательный*: значение по умолчанию = `false`);
 * `statistics.monitor.zabbix.templates` -- имена шаблонов Zabbix (например, `Template JMX Generic`), перечисленные через запятую, которые должны быть применены к данному хосту (параметр *необязательный*);
 * `statistics.monitor.zabbix.configureJvmMonitor` -- настраивать ли в Zabbix *элементы данных*, *триггеры* и *графики* для базового мониторинга JVM (параметр *необязательный*: значение по умолчанию = `false`);
