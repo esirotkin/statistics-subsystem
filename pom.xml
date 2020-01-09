@@ -16,6 +16,11 @@
     <description>Subsystem for monitoring and collecting statistics of event-driven Java applications</description>
     <packaging>pom</packaging>
 
+    <organization>
+        <name>Otkritie Brokerage House JSC</name>
+        <url>http://open-broker.ru/</url>
+    </organization>
+
     <scm>
         <developerConnection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</developerConnection>
         <connection>scm:git:ssh://git@github.com:esirotkin/statistics-subsystem.git</connection>
@@ -23,6 +28,32 @@
         <tag>HEAD</tag>
     </scm>
 
+    <repositories>
+        <repository>
+            <id>bp-public-obr</id>
+            <name>BasePoint Public OSGi Bundle Repo</name>
+            <url>http://repo.basepoint.su/content/groups/public-obr/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    <pluginRepositories>
+        <pluginRepository>
+            <id>bp-public</id>
+            <name>BasePoint Public Maven Repo</name>
+            <url>http://repo.basepoint.su/content/groups/public/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </pluginRepository>
+    </pluginRepositories>
     <distributionManagement>
         <snapshotRepository>
             <id>ossrh</id>
@@ -40,9 +71,6 @@
         <!-- Spring & Aspect J -->
         <spring.version>[3.0.0.RELEASE,)</spring.version>
         <aspectj.version>[1.5.0,)</aspectj.version>
-        <!-- Zabbix -->
-        <zabbix.api.version>0.0.3</zabbix.api.version>
-        <zabbix.sender.version>0.0.5</zabbix.sender.version>
         <!-- Logginig -->
         <slf4j-api.version>[1.6.0,)</slf4j-api.version>
         <logback.version>[1.0.0,)</logback.version>
@@ -160,6 +188,26 @@
                     </configuration>
                 </plugin>
                 <plugin>
+                    <groupId>org.apache.felix</groupId>
+                    <artifactId>maven-bundle-plugin</artifactId>
+                    <extensions>true</extensions>
+                    <configuration>
+                        <instructions>
+                            <Bundle-Name>${project.name}</Bundle-Name>
+                            <Bundle-Vendor>${project.organization.name}</Bundle-Vendor>
+                            <Bundle-Description>${project.description}</Bundle-Description>
+                            <Bundle-ClassPath>.,{maven-dependencies}</Bundle-ClassPath>
+                            <Import-Package>
+                                org.slf4j
+                            </Import-Package>
+                            <Export-Package>
+                                ru.open.monitor.statistics.*
+                            </Export-Package>
+                            <remoteOBR />
+                        </instructions>
+                    </configuration>
+                </plugin>
+                <plugin>
                     <groupId>org.apache.maven.plugins</groupId>
                     <artifactId>maven-release-plugin</artifactId>
                     <configuration>
@@ -219,19 +267,6 @@
                 <groupId>org.aspectj</groupId>
                 <artifactId>aspectjweaver</artifactId>
                 <version>${aspectj.version}</version>
-            </dependency>
-            <!-- ========================================================== -->
-            <!-- Zabbix                                                     -->
-            <!-- ========================================================== -->
-            <dependency>
-                <groupId>io.github.esirotkin</groupId>
-                <artifactId>zabbix-api</artifactId>
-                <version>${zabbix.api.version}</version>
-            </dependency>
-            <dependency>
-                <groupId>io.github.hengyunabc</groupId>
-                <artifactId>zabbix-sender</artifactId>
-                <version>${zabbix.sender.version}</version>
             </dependency>
             <!-- ========================================================== -->
             <!-- Logging                                                    -->

@@ -12,6 +12,73 @@
 
     <artifactId>statistics-exposer-zabbix</artifactId>
     <name>Statistics Exposer Zabbix</name>
+    <description>Statistics Exposer Zabbix</description>
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-dependency-plugin</artifactId>
+                <executions>
+                    <execution>
+                        <id>default-unpack-jars</id>
+                        <phase>process-classes</phase>
+                        <goals>
+                            <goal>unpack</goal>
+                        </goals>
+                        <configuration>
+                            <outputDirectory>${project.build.outputDirectory}</outputDirectory>
+                            <artifactItems>
+                                <artifactItem>
+                                    <groupId>io.github.esirotkin</groupId>
+                                    <artifactId>zabbix-api</artifactId>
+                                    <version>${zabbix.api.version}</version>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>io.github.hengyunabc</groupId>
+                                    <artifactId>zabbix-sender</artifactId>
+                                    <version>${zabbix.sender.version}</version>
+                                    <overWrite>true</overWrite>
+                                </artifactItem>
+                            </artifactItems>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <noWarningProjectTypes>
+                        <noWarningProjectType>maven-plugin</noWarningProjectType>
+                    </noWarningProjectTypes>
+                    <instructions>
+                        <Bundle-SymbolicName>ru.open.monitor.statistics.exposer.zabbix</Bundle-SymbolicName>
+                        <Import-Package>
+                            ru.open.monitor.statistics.*,
+                            org.springframework.*,
+                            com.alibaba.fastjson.*,
+                            org.slf4j
+                        </Import-Package>
+                        <Export-Package>
+                            ru.open.monitor.statistics.*,
+                            io.github.hengyunabc.zabbix.api;version=${zabbix.api.version},
+                            io.github.hengyunabc.zabbix.sender;version=${zabbix.sender.version}
+                        </Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+
+    <properties>
+        <!-- Zabbix -->
+        <zabbix.api.version>0.0.3</zabbix.api.version>
+        <zabbix.sender.version>0.0.5</zabbix.sender.version>
+    </properties>
 
     <dependencies>
         <dependency>
@@ -32,10 +99,14 @@
         <dependency>
             <groupId>io.github.esirotkin</groupId>
             <artifactId>zabbix-api</artifactId>
+            <version>${zabbix.api.version}</version>
+            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>io.github.hengyunabc</groupId>
             <artifactId>zabbix-sender</artifactId>
+            <version>${zabbix.sender.version}</version>
+            <scope>provided</scope>
         </dependency>
         <!-- ========================================================== -->
         <!-- Test                                                       -->
