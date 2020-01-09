@@ -12,6 +12,27 @@
 
     <artifactId>statistics-collector-jdbc</artifactId>
     <name>Statistics Collector JDBC</name>
+    <description>Statistics Collector JDBC</description>
+    <packaging>bundle</packaging>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>ru.open.monitor.statistics.collector.jdbc</Bundle-SymbolicName>
+                        <Import-Package>
+                            ru.open.monitor.statistics.*,
+                            org.slf4j
+                        </Import-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 
     <dependencies>
         <dependency>
