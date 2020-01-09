@@ -71,6 +71,7 @@ public class PublishedEvent implements Comparable<PublishedEvent> {
 
     private final Key key;
     private final long eventCount;
+    private final long lastUpdateTime;
 
     PublishedEvent(Key key) {
         this(key, 1L);
@@ -79,6 +80,7 @@ public class PublishedEvent implements Comparable<PublishedEvent> {
     private PublishedEvent(Key key, long eventCount) {
         this.key = key;
         this.eventCount = eventCount;
+        this.lastUpdateTime = System.currentTimeMillis();
     }
 
     PublishedEvent update() {
@@ -101,6 +103,10 @@ public class PublishedEvent implements Comparable<PublishedEvent> {
         return eventCount;
     }
 
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
     @Override
     public int compareTo(PublishedEvent anotherEvent) {
         return key.compareTo(anotherEvent.key);
@@ -108,7 +114,7 @@ public class PublishedEvent implements Comparable<PublishedEvent> {
 
     @Override
     public String toString() {
-        return "PublishedEvent [key=" + key + ", eventCount=" + eventCount + "]";
+        return "PublishedEvent [key=" + key + ", eventCount=" + eventCount + ", lastUpdateTime=" + lastUpdateTime + "]";
     }
 
 }

@@ -78,6 +78,7 @@ public class ProcessedEvent implements Comparable<ProcessedEvent> {
     private final long avgDurationNanos;
     private final long lastDurationNanos;
     private final long summaryDurationNanos;
+    private final long lastUpdateTime;
 
     ProcessedEvent(Key key, long durationNanos) {
         this(key, 1L, durationNanos, durationNanos, durationNanos, durationNanos, durationNanos);
@@ -93,6 +94,7 @@ public class ProcessedEvent implements Comparable<ProcessedEvent> {
         this.avgDurationNanos = avgDurationNanos;
         this.lastDurationNanos = lastDurationNanos;
         this.summaryDurationNanos = summaryDurationNanos;
+        this.lastUpdateTime = System.currentTimeMillis();
     }
 
     ProcessedEvent update(final long durationNanos) {
@@ -141,6 +143,10 @@ public class ProcessedEvent implements Comparable<ProcessedEvent> {
         return summaryDurationNanos;
     }
 
+    public long getLastUpdateTime() {
+        return lastUpdateTime;
+    }
+
     @Override
     public int compareTo(ProcessedEvent anotherEvent) {
         return key.compareTo(anotherEvent.key);
@@ -150,7 +156,8 @@ public class ProcessedEvent implements Comparable<ProcessedEvent> {
     public String toString() {
         return "ProcessedEvent [key=" + key + ", eventCount=" + eventCount + ", minDuration=" + toMicros(minDurationNanos) +
                ", maxDuration=" + toMicros(maxDurationNanos) + ", avgDuration=" + toMicros(avgDurationNanos) +
-               ", lastDuration=" + toMicros(lastDurationNanos) + ", sumDuration=" + toMillis(summaryDurationNanos) + "]";
+               ", lastDuration=" + toMicros(lastDurationNanos) + ", sumDuration=" + toMillis(summaryDurationNanos) +
+               ", lastUpdateTime=" + lastUpdateTime + "]";
     }
 
 }
