@@ -11,7 +11,7 @@
 
     <groupId>io.github.esirotkin</groupId>
     <artifactId>statistics-subsystem</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.1-SNAPSHOT</version>
     <name>Statistics Subsystem</name>
     <description>Subsystem for monitoring and collecting statistics of event-driven Java applications</description>
     <packaging>pom</packaging>
