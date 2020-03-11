@@ -30,6 +30,7 @@
                             ch.qos.logback.*,
                             org.slf4j
                         </Import-Package>
+                        <Export-Package>ru.open.monitor.statistics.log.*</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

@@ -28,6 +28,7 @@
                             ru.open.monitor.statistics.*,
                             org.slf4j
                         </Import-Package>
+                        <Export-Package>ru.open.monitor.statistics.jdbc</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

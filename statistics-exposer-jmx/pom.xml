@@ -29,6 +29,7 @@
                             org.springframework.*,
                             org.slf4j
                         </Import-Package>
+                        <Export-Package>ru.open.monitor.statistics.jmx</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>

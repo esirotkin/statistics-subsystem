@@ -64,7 +64,7 @@
                             org.slf4j
                         </Import-Package>
                         <Export-Package>
-                            ru.open.monitor.statistics.*,
+                            ru.open.monitor.statistics.zabbix.*,
                             io.github.hengyunabc.zabbix.api;version=${zabbix.api.version},
                             io.github.hengyunabc.zabbix.sender;version=${zabbix.sender.version}
                         </Export-Package>

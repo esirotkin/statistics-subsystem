@@ -30,6 +30,7 @@
                             org.aspectj.lang,
                             org.slf4j
                         </Import-Package>
+                        <Export-Package>ru.open.monitor.statistics.aop</Export-Package>
                     </instructions>
                 </configuration>
             </plugin>
