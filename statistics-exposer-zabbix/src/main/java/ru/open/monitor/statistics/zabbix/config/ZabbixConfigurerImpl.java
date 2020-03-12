@@ -205,7 +205,7 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
 
     @Value("${statistics.monitor.zabbix.agent.app:${spring.application.name}}")
     private String zabbixAgentApplication;
-    @Value("#{zabbixAgentAddress.hostIP}")
+    @Value("${statistics.monitor.zabbix.agent.host:#{zabbixAgentAddress.hostIP}}")
     private String zabbixAgentHost;
     @Value("#{zabbixAgentAddress.hostName}")
     private String zabbixAgentHostName;
