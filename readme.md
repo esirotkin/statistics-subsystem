@@ -38,7 +38,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-holder</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
@@ -125,7 +125,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-collector-aop</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
@@ -172,7 +172,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-collector-jdbc</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
@@ -259,7 +259,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-jmx</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
@@ -307,7 +307,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-zabbix</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
@@ -477,7 +477,7 @@
     <dependency>
         <groupId>io.github.esirotkin</groupId>
         <artifactId>statistics-exposer-log</artifactId>
-        <version>1.1.2</version>
+        <version>1.1.3</version>
     </dependency>
 ```
 
