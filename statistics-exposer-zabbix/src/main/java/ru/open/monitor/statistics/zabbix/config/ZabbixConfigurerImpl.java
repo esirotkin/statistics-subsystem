@@ -89,6 +89,8 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
         put(APP_PROCESSED_RESULTS_KEY, APP_PROCESSED_RESULTS);
     }};
 
+    private static final Map<ItemKey, String> ITEM_KEY_PREFIX = new ConcurrentHashMap<>();
+
     private enum InterfaceType {
         ZBX(1), SNMP(2), IPMI(3), JMX(4);
 
@@ -428,7 +430,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
             case PROCESSED_EVENT_COUNT:
             case PROCESSED_EVENT_D_AVG:
                 if (isInterestProcessedEvent(key.getEventClass())) {
-                    return zabbixAgentApplication + "." + APP_PROCESSED_EVENTS + "." + getSimpleClassName(key.getEventClass()) + "." + getSimpleClassName(key.getHandlerClass()) + "." + itemKind.getItemName();
+                    String eventKeyPrefix = ITEM_KEY_PREFIX.computeIfAbsent(key, k -> zabbixAgentApplication + "." +
+                                                                                      APP_PROCESSED_EVENTS + "." +
+                                                                                      getSimpleClassName(key.getEventClass()) + "." +
+                                                                                      getSimpleClassName(key.getHandlerClass()));
+                    return eventKeyPrefix + "." + itemKind.getItemName();
                 } else {
                     return getProcessedEventJmxKey(key, itemKind);
                 }
@@ -469,7 +475,11 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
         switch (itemKind) {
             case PUBLISHED_EVENT_COUNT:
                 if (isInterestPublishedEvent(key.getEventClass())) {
-                    return zabbixAgentApplication + "." + APP_PUBLISHED_EVENTS + "." + getSimpleClassName(key.getEventClass()) + "." + getSimpleClassName(key.getPublisherClass()) + "." + itemKind.getItemName();
+                    String eventKeyPrefix = ITEM_KEY_PREFIX.computeIfAbsent(key, k -> zabbixAgentApplication + "." +
+                                                                                      APP_PUBLISHED_EVENTS + "." +
+                                                                                      getSimpleClassName(key.getEventClass()) + "." +
+                                                                                      getSimpleClassName(key.getPublisherClass()));
+                    return eventKeyPrefix + "." + itemKind.getItemName();
                 } else {
                     return getPublishedEventJmxKey(key, itemKind);
                 }
@@ -499,7 +509,7 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getQueueStatisticsKey(final QueueStatisticsKey key) {
-        return zabbixAgentApplication + "." + key.getServiceName() + "." + key.getItemName() + "." + key.getItemKind().getItemName();
+        return ITEM_KEY_PREFIX.computeIfAbsent(key, k -> zabbixAgentApplication + "." + key.getServiceName() + "." + key.getItemName() + "." + key.getItemKind().getItemName());
     }
 
     private String getQueueStatisticsName(final QueueStatisticsKey key) {
@@ -519,7 +529,8 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getExecutedStatementKey(final ExecutedStatement.Key key, final ItemKind itemKind) {
-        return zabbixAgentApplication + "." + APP_EXECUTED_STATEMENTS + "." + key.getStatement() + "." + itemKind.getItemName();
+        String statementKeyPrefix = ITEM_KEY_PREFIX.computeIfAbsent(key, k -> zabbixAgentApplication + "." + APP_EXECUTED_STATEMENTS + "." + key.getStatement());
+        return statementKeyPrefix + "." + itemKind.getItemName();
     }
 
     private String getExecutedStatementName(final ExecutedStatement.Key key, final ItemKind itemKind) {
@@ -547,7 +558,8 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
     }
 
     private String getProcessedResultKey(final ProcessedResult.Key key, final ItemKind itemKind) {
-        return zabbixAgentApplication + "." + APP_PROCESSED_RESULTS + "." + key.getStatement() + "." + key.getResultSet() + "." + itemKind.getItemName();
+        String statementKeyPrefix = ITEM_KEY_PREFIX.computeIfAbsent(key, k -> zabbixAgentApplication + "." + APP_PROCESSED_RESULTS + "." + key.getStatement() + "." + key.getResultSet());
+        return statementKeyPrefix + "." + itemKind.getItemName();
     }
 
     private String getProcessedResultName(final ProcessedResult.Key key, final ItemKind itemKind) {
