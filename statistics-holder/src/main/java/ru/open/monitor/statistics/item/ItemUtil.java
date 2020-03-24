@@ -1,5 +1,7 @@
 package ru.open.monitor.statistics.item;
 
+import java.util.regex.Pattern;
+
 public abstract class ItemUtil {
 
     public static final String PKG_MONITORING = "ru.open.monitor.statistics";
@@ -10,6 +12,12 @@ public abstract class ItemUtil {
     public static final String APP_EXECUTED_STATEMENTS = "ExecutedStatements";
     public static final String APP_PROCESSED_RESULTS = "ProcessedResultSets";
 
+    private static final Pattern RE_ESCAPE_NAME = Pattern.compile("\\.");
+    private static final Pattern RE_CLEAN_CLASS_NAME = Pattern.compile("^(.+)(?:\\$\\$EnhancerBySpringCGLIB\\$\\$.+$|\\$\\$EnhancerByCGLIB\\$\\$.+$|\\$Proxy\\d+)");
+    private static final Pattern RE_MAIN_PART_NAME = Pattern.compile("(?:.*\\.)([^.])");
+    private static final Pattern RE_STATEMENT_NAME = Pattern.compile("(?:\\{|\\}|\\(|\\)|\\?|:|,)");
+    private static final Pattern RE_STATEMENT_NAME_SPACE = Pattern.compile("\\s+");
+
     public static String generateItemKey(final String className, final ItemKind itemKind) {
         return getSimpleClassName(className) + "." + itemKind.getItemName();
     }
@@ -19,7 +27,7 @@ public abstract class ItemUtil {
     }
 
     public static String escapeString(final String string) {
-        return string.replaceAll("\\.", "\\\\.");
+        return RE_ESCAPE_NAME.matcher(string).replaceAll("\\\\.");
     }
 
     public static String getEscapedClassName(final String className) {
@@ -31,15 +39,16 @@ public abstract class ItemUtil {
     }
 
     public static String getCleanClassName(final String className) {
-        return className.trim().replaceAll("^(.+)(?:\\$\\$EnhancerBySpringCGLIB\\$\\$.+$|\\$\\$EnhancerByCGLIB\\$\\$.+$|\\$Proxy\\d+)", "$1");
+        return RE_CLEAN_CLASS_NAME.matcher(className.trim()).replaceAll("$1");
     }
 
     public static String getMainNamePart(final String name) {
-        return name != null ? name.replaceFirst("(?:.*\\.)([^.])", "$1") : null;
+        return name != null ? RE_MAIN_PART_NAME.matcher(name).replaceFirst("$1") : null;
     }
 
     public static String prepareStatementName(final String sql) {
-        String statement = sql.replaceAll("(?:\\{|\\}|\\(|\\)|\\?|:|,)", "").trim().replaceAll("\\s+", "_").toLowerCase();
+        String statement = RE_STATEMENT_NAME.matcher(sql).replaceAll("").trim();
+        statement = RE_STATEMENT_NAME_SPACE.matcher(statement).replaceAll("_").toLowerCase();
         if (statement.length() > 192) {
             statement = statement.substring(0, 189).concat("...");
         }
