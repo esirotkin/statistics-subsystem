@@ -49,6 +49,11 @@
                                 </artifactItem>
                                 <artifactItem>
                                     <groupId>org.apache.httpcomponents</groupId>
+                                    <artifactId>httpcore</artifactId>
+                                    <version>${httpcore.version}</version>
+                                </artifactItem>
+                                <artifactItem>
+                                    <groupId>org.apache.httpcomponents</groupId>
                                     <artifactId>httpclient</artifactId>
                                     <version>${httpclient.version}</version>
                                 </artifactItem>
@@ -89,7 +94,8 @@
         <zabbix.api.version>0.0.3</zabbix.api.version>
         <zabbix.sender.version>0.0.5</zabbix.sender.version>
         <fastjson.version>1.2.8</fastjson.version>
-        <httpclient.version>4.5.2</httpclient.version>
+        <httpcore.version>4.4.13</httpcore.version>
+        <httpclient.version>4.5.12</httpclient.version>
     </properties>
 
     <dependencies>
