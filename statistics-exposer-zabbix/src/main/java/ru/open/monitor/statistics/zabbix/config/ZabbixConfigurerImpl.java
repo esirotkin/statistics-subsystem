@@ -153,6 +153,7 @@ public class ZabbixConfigurerImpl extends DefaultZabbixApi implements ZabbixConf
         V_4_4("4\\.4\\..*"),
         V_4_5("4\\.5\\..*"),
         V_5_0("5\\.0\\..*"),
+        V_5_1("5\\.1\\..*"),
         V_5_2("5\\.2\\..*"),
         V_NEW("(?:5\\.[3-9]\\..*|\\d*?[6-9]\\.\\d+\\..*)");
 
