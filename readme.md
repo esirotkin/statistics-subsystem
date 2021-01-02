@@ -141,16 +141,19 @@
     <aop:aspectj-autoproxy proxy-target-class="true" />
 
     <aop:config>
-        <aop:aspect id="monitoringAspect" ref="statisticsCollectorAspect">
+        <aop:aspect id="processEventAspect" ref="statisticsCollectorAspect">
             <aop:pointcut id="processEvent" expression="execution(public !static void ru.open..*.onEvent*(..))" />
             <aop:around pointcut-ref="processEvent" method="eventProcessed" />
-
+        </aop:aspect>
+        <aop:aspect id="publishEventAspect" ref="statisticsCollectorAspect">
             <aop:pointcut id="publishEvent" expression="execution(public !static void ru.open..*.consumeEvent(..))" />
             <aop:after pointcut-ref="publishEvent" method="eventPublished" />
-
+        </aop:aspect>
+        <aop:aspect id="sendRequestAspect" ref="statisticsCollectorAspect">
             <aop:pointcut id="sendRequest" expression="execution(public !static * ru.open..*.sendRequest(..))" />
             <aop:around pointcut-ref="sendRequest" method="requestPublished" />
-
+        </aop:aspect>
+        <aop:aspect id="processRequestAspect" ref="statisticsCollectorAspect">
             <aop:pointcut id="processRequest" expression="execution(public !static * ru.open..*.processRequest(..))" />
             <aop:around pointcut-ref="processRequest" method="requestProcessed" />
         </aop:aspect>
